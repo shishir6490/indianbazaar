@@ -1,11 +1,11 @@
 // frontend/src/pages/Dashboard.js
 import React from 'react';
 
-function Dashboard() {
+const Dashboard = () => {
   return (
     <div>
       <h1>Dashboard</h1>
-      {/* Other content */}
+      <p>Welcome to the Dashboard!</p>
     </div>
   );
 }
