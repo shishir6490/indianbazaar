@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from '../pages/App';
 
 test('renders Dashboard heading', async () => {
-  const { getByText, debug } = render(
+  const { getByRole, debug } = render(
     <Router>
       <App />
     </Router>
@@ -16,7 +16,7 @@ test('renders Dashboard heading', async () => {
 
   // Wait for the Dashboard component to be rendered
   await waitFor(() => {
-    const headingElement = getByText(/dashboard/i);
+    const headingElement = getByRole('heading', { name: /dashboard/i });
     expect(headingElement).toBeInTheDocument();
   });
 });
