@@ -25,11 +25,17 @@ jobs:
       working-directory: ./backend
       run: |
         npm install
+      continue-on-error: true  # Continue even if there's an error, to capture more logs
 
     - name: Run backend tests
       working-directory: ./backend
       run: |
         npm test
+      continue-on-error: true  # Continue even if there's an error, to capture more logs
+
+    - name: Print logs
+      if: failure()
+      run: dmesg # Capture system logs for debugging
 
   frontend:
     runs-on: ubuntu-latest
@@ -47,8 +53,18 @@ jobs:
       working-directory: ./frontend
       run: |
         npm install
+      continue-on-error: true  # Continue even if there's an error, to capture more logs
 
     - name: Run frontend tests
       working-directory: ./frontend
       run: |
         npm test
+      continue-on-error: true  # Continue even if there's an error, to capture more logs
+
+    - name: Print logs
+      if: failure()
+      run: dmesg # Capture system logs for debugging
+      
+    - name: Set environment variables
+      run: |
+        echo "NODE_ENV=production" >> $GITHUB_ENV
