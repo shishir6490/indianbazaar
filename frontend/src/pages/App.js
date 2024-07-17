@@ -1,6 +1,6 @@
 // frontend/src/pages/App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Inventory from './Inventory';
 import Login from './Login';
@@ -18,6 +18,7 @@ function App() {
           <Route path="/inventory" component={Inventory} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Redirect from="/" to="/dashboard" />  {/* Default route */}
         </Switch>
         <Footer />
       </div>
