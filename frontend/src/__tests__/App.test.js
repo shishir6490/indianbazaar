@@ -2,12 +2,12 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import App from '../pages/App';
+import Dashboard from '../pages/Dashboard';
 
 test('renders Dashboard heading', () => {
   const { getByText } = render(
     <Router>
-      <Route path="/dashboard" component={App} />
+      <Route path="/dashboard" component={Dashboard} />
     </Router>
   );
   const headingElement = getByText(/dashboard/i);
