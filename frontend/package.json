@@ -44,4 +44,10 @@
   }
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4" // Ensure this version is up-to-date
+
+  "jest": {
+    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
+  }
+}
+
 }
