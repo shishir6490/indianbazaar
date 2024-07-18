@@ -43,11 +43,10 @@
     "eslint-plugin-react": "^7.24.0"
   }
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4" // Ensure this version is up-to-date
+    "@testing-library/jest-dom": "^5.16.4" 
+  }
 
   "jest": {
     "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
   }
-}
-
 }
