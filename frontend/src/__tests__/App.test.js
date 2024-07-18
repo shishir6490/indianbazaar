@@ -1,22 +1,14 @@
-// frontend/src/__tests__/App.test.js
+// src/__tests__/App.test.js
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from '../pages/App';
+import { render, screen, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect'; // Ensure this is imported
+import App from '../App';
 
 test('renders Dashboard heading', async () => {
-  const { getByRole, debug } = render(
-    <Router>
-      <App />
-    </Router>
-  );
+  render(<App />);
 
-  // Debugging the rendered output
-  debug();
-
-  // Wait for the Dashboard component to be rendered
   await waitFor(() => {
-    const headingElement = getByRole('heading', { name: /dashboard/i });
+    const headingElement = screen.getByRole('heading', { name: /dashboard/i });
     expect(headingElement).toBeInTheDocument();
   });
 });
