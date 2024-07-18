@@ -44,9 +44,5 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4" 
-  },
-
-  "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
   }
 }
