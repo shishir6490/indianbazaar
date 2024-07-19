@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Frontend for IndianBazaar application",
   "private": true,
-  "homepage": "https://shishir6490.github.io/indianbazaar",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -39,6 +38,7 @@
       "last 1 safari version"
     ]
   },
+  "homepage": "https://shishir6490.github.io/indianbazaar/",
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-plugin-react": "^7.24.0",
