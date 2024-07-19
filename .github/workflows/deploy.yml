@@ -22,21 +22,36 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      # Backend setup
       - name: Install backend dependencies
         working-directory: ./backend
         run: npm install
 
+      - name: Run backend tests
+        working-directory: ./backend
+        run: npm test
+
+      - name: Start backend server
+        working-directory: ./backend
+        run: npm start &
+
+      # Frontend setup
       - name: Install frontend dependencies
         working-directory: ./frontend
         run: npm install
+
+      - name: Run frontend tests
+        working-directory: ./frontend
+        run: npm test
 
       - name: Build frontend
         working-directory: ./frontend
         run: npm run build
 
-      - name: Deploy backend
-        working-directory: ./backend
-        env:
-          NODE_ENV: production
-        run: |
-          npm start
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/build
