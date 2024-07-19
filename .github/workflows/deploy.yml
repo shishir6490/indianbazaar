@@ -33,18 +33,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/build
-          publish_branch: main
-          destination_dir: /
-
-      - name: Remove old build files
-        run: |
-          git rm -r --cached .
-
-      - name: Add and commit new build files
-        run: |
-          git add .
-          git commit -m 'Deploy new version'
-
-      - name: Push changes
-        run: |
-          git push origin main
+          publish_branch: gh-pages
