@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Frontend for IndianBazaar application",
   "private": true,
+  "homepage": "https://username.github.io/repository",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -40,9 +41,7 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.24.0"
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4" 
+    "eslint-plugin-react": "^7.24.0",
+    "@testing-library/jest-dom": "^5.16.4"
   }
 }
