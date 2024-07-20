@@ -28,12 +28,9 @@ jobs:
           cd frontend
           npm run build
 
-      - name: List remote branches
-        run: git branch -r
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./frontend/build
           publish_branch: gh-pages
